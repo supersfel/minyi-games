@@ -6,9 +6,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const componentType = typeof window === "undefined" ? "server" : "client";
-
-  console.log("layout", componentType);
   return (
     <html>
       <body>
