@@ -1,5 +1,5 @@
-// app/layout.tsx
 import StyledComponentsRegistry from "./registry";
+import "styles/reset.css";
 
 export default function RootLayout({
   children,

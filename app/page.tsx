@@ -1,6 +1,8 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import styled from "styled-components";
 
-export default function Home() {
-  return <p>helloworld</p>;
+export default function Page() {
+  return <h1>어서옵숑!!</h1>;
 }
+1;
+const Wrapper = styled.div``;
