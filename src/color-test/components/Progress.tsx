@@ -4,8 +4,8 @@ import Brush from "color-test/components/Brush";
 import Xylophone from "color-test/components/Xylophone";
 import { useEffect, useState } from "react";
 import { BlackBox } from "color-test/styles/box";
-import { makeRandomColors } from "color-test/utils/game";
 import styled from "styled-components";
+import { makeRandomColors } from "color-test/utils/game";
 
 interface Props {
   gameEnd: () => void;

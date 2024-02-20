@@ -1,6 +1,6 @@
 "use client";
 
-import BrushSVG from "color-test/assets/brsuh.svg";
+import BrushSVG from "color-test/assets/BrushSvg";
 import styled from "styled-components";
 
 const Brush = ({ color, size }: { color: string; size: string }) => {
