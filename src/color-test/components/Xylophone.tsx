@@ -4,11 +4,6 @@ import React, { memo, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { colorStickType } from "color-test/types/game";
 import { toast } from "react-toastify";
-// import {
-//   changeRGBToHex,
-//   makeCorrectBoom,
-//   makeWrongBoom,
-// } from "color-test/utils/game";
 import styled from "styled-components";
 import { changeRGBToHex } from "color-test/utils/game";
 
@@ -45,7 +40,6 @@ const Xylophone = memo(
 
       //맞춘경우
       if (color === answer) {
-        // makeCorrectBoom();
         goNextLevel();
         if (level) toast.success(`잘하셨어요! ${level} 클리어!!`);
         else toast.success(`잘하셨어요! 시작해 볼까요?`);
@@ -53,7 +47,6 @@ const Xylophone = memo(
       }
 
       //틀린경우
-      // makeWrongBoom();
       if (level) {
         toast.warning(`틀렸어요 ㅠㅠ`);
         if (gameEnd) gameEnd();

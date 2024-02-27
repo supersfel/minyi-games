@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 export default function layout({ children }: { children: React.ReactNode }) {
   return (
     <html>

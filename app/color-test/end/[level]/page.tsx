@@ -9,7 +9,6 @@ import { useParams, useRouter } from "next/navigation";
 
 const GameOver = () => {
   const param = useParams();
-  console.log(param.level);
   const level = +param.level;
   const mentAry = [
     "화가이신가요?! 말도 안되게 잘하시네요!",
