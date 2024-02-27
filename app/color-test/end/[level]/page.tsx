@@ -5,13 +5,12 @@ import { toast } from "react-toastify";
 import { BlackBox } from "color-test/styles/box";
 import { uiColor } from "color-test/styles/color";
 import styled from "styled-components";
+import { useParams, useRouter } from "next/navigation";
 
-interface Props {
-  level: number;
-  gameStart: () => void;
-}
-
-const GameOver = ({ level, gameStart }: Props) => {
+const GameOver = () => {
+  const param = useParams();
+  console.log(param.level);
+  const level = +param.level;
   const mentAry = [
     "화가이신가요?! 말도 안되게 잘하시네요!",
     "수준급 시각적 차별력을 지니셨네요!!",
@@ -27,10 +26,11 @@ const GameOver = ({ level, gameStart }: Props) => {
   ];
 
   const percentAry = [3, 30, 50, 80];
+  const router = useRouter();
 
   const [mentIdx, setMentIdx] = useState(-1);
   useEffect(() => {
-    const nxIdx = level > 19 ? 0 : level > 14 ? 1 : level > 8 ? 2 : 3;
+    const nxIdx = level > 19 ? 0 : level > 12 ? 1 : level > 8 ? 2 : 3;
     setMentIdx(nxIdx);
   }, [level]);
 
@@ -38,6 +38,10 @@ const GameOver = ({ level, gameStart }: Props) => {
 
   const handleShareBtn = () => {
     toast.warning("아직 공유중은 개발중이에요 ㅠ");
+  };
+
+  const gameStart = () => {
+    router.push("/color-test");
   };
 
   return (

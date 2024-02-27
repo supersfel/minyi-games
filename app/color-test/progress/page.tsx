@@ -6,19 +6,21 @@ import { useEffect, useState } from "react";
 import { BlackBox } from "color-test/styles/box";
 import styled from "styled-components";
 import { makeRandomColors } from "color-test/utils/game";
+import { useRouter } from "next/navigation";
 
-interface Props {
-  gameEnd: () => void;
-  level: number;
-  levelUp: () => void;
-}
-
-const Progress = ({ gameEnd, level, levelUp }: Props) => {
+const Progress = () => {
   const isMobile = /Mobi/i.test(window.navigator.userAgent);
   const [colors, setColors] = useState<string[]>([]);
 
   const [doCheckAnswer, setDoCheckAnswer] = useState(false);
   const [answer, setAnswer] = useState<string>("");
+
+  const [level, setLevel] = useState(1);
+  const levelUp = () => {
+    setLevel((prev) => prev + 1);
+  };
+
+  const router = useRouter();
 
   //레벨에 맞는 색상 선택
   useEffect(() => {
@@ -36,8 +38,8 @@ const Progress = ({ gameEnd, level, levelUp }: Props) => {
     setDoCheckAnswer(true);
   };
 
-  const goNextLevel = () => {
-    levelUp();
+  const gameEnd = () => {
+    router.push(`/color-test/end/${level}`);
   };
 
   return (
@@ -52,7 +54,7 @@ const Progress = ({ gameEnd, level, levelUp }: Props) => {
           doChekcAnswer={doCheckAnswer}
           answer={answer}
           level={level}
-          goNextLevel={goNextLevel}
+          goNextLevel={levelUp}
           gameEnd={gameEnd}
         />
       </XylophoneWrapper>
