@@ -1,20 +1,19 @@
-import JSConfetti from "js-confetti";
-
-const jsConfetti = new JSConfetti();
 export const makeCorrectBoom = () => {
-  jsConfetti.addConfetti({
-    emojis: ["🏆", "🎨", "🌈", "👨‍🎨"],
-    emojiSize: 100,
-    confettiNumber: 40,
-  });
+  alert("성공");
+  // jsConfetti.addConfetti({
+  //   emojis: ["🏆", "🎨", "🌈", "👨‍🎨"],
+  //   emojiSize: 100,
+  //   confettiNumber: 40,
+  // });
 };
 
 export const makeWrongBoom = () => {
-  jsConfetti.addConfetti({
-    emojis: ["💩", "😭", "🤷", "💩"],
-    emojiSize: 100,
-    confettiNumber: 25,
-  });
+  alert("실패");
+  // jsConfetti.addConfetti({
+  //   emojis: ["💩", "😭", "🤷", "💩"],
+  //   emojiSize: 100,
+  //   confettiNumber: 25,
+  // });
 };
 
 function ColorToHex(color: number) {

@@ -18,7 +18,11 @@ interface Props {
 
 const Xylophone = memo(
   ({ colorAry, doChekcAnswer, answer, level, goNextLevel, gameEnd }: Props) => {
-    const isMobile = /Mobi/i.test(window.navigator.userAgent); // "Mobi" 가 User agent에 포함되어 있으면 모바일
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      setIsMobile(/Mobi/i.test(window.navigator.userAgent));
+    }, []);
 
     //간격 설정 (10개 기준)으로만 현재 개발
     const INTERVAL_BETWEEN = isMobile ? 70 : 100;
