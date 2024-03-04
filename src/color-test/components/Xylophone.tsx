@@ -238,6 +238,8 @@ const Xylophone = memo(
                 onMouseEnter={() => handleMouseEnterBox(i)}
                 onMouseLeave={() => handleMouseLeaveBox(i)}
                 onMouseDown={() => clickBox(i)}
+                onTouchStart={() => handleMouseEnterBox(i)}
+                onTouchEnd={() => clickBox(i)}
               ></Box>
             );
           })}
