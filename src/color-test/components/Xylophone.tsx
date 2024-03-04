@@ -170,6 +170,7 @@ const Xylophone = memo(
 
     //박스에 마우스를 가져다 대면 커짐
     const handleMouseEnterBox = (idx: number) => {
+      toast.success("zㅡㄹ릭~");
       gsap.to(boxRef.current[idx], {
         duration: 0.3,
         scaleY: 1.2,
@@ -238,8 +239,6 @@ const Xylophone = memo(
                 onMouseEnter={() => handleMouseEnterBox(i)}
                 onMouseLeave={() => handleMouseLeaveBox(i)}
                 onMouseDown={() => clickBox(i)}
-                onTouchStart={() => handleMouseEnterBox(i)}
-                onTouchEnd={() => clickBox(i)}
               ></Box>
             );
           })}
