@@ -17,6 +17,10 @@ const Page = () => {
   const [doCheckAnswer, setDoCheckAnswer] = useState(false);
   const [answer, setAnswer] = useState<string>("");
 
+  useEffect(() => {
+    setDoCheckAnswer(false);
+  }, []);
+
   const [level, setLevel] = useState(1);
   const levelUp = () => {
     setLevel((prev) => prev + 1);
@@ -55,7 +59,7 @@ const Page = () => {
       <XylophoneWrapper>
         <Xylophone
           colorAry={colors}
-          doChekcAnswer={doCheckAnswer}
+          doCheckAnswer={doCheckAnswer}
           answer={answer}
           level={level}
           goNextLevel={levelUp}

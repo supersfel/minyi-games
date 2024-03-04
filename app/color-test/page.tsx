@@ -55,7 +55,7 @@ const Page = () => {
       <XylophoneWrapper>
         <Xylophone
           colorAry={startAry}
-          doChekcAnswer={doCheckAnswer}
+          doCheckAnswer={doCheckAnswer}
           answer="#464BD8"
           level={0}
           goNextLevel={gameStart}
