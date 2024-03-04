@@ -256,10 +256,12 @@ const Xylophone = ({
 const Wrapper = styled.div`
   margin-top: 10rem;
   overflow: hidden;
+  cursor: pointer;
 `;
 
 const Animations = styled.div`
   position: absolute;
+  cursor: pointer;
 `;
 
 const Box = styled.div`
