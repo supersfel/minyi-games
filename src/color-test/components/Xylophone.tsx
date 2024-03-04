@@ -87,7 +87,7 @@ const Xylophone = ({
   //초기 container perspective 설정
   useLayoutEffect(() => {
     gsap.timeline().set(containerRef.current, { perspective: 1000 });
-  }, [colorAry, answer, level, doChekcAnswer]);
+  }, [containerRef]);
 
   // 각 Box에 애니메이션 설정
   useLayoutEffect(() => {
@@ -125,14 +125,7 @@ const Xylophone = ({
     }, containerRef);
 
     return () => ctx.revert();
-  }, [
-    INTERVAL_BETWEEN,
-    START_ROTATIONY,
-    colorAry,
-    answer,
-    level,
-    doChekcAnswer,
-  ]);
+  }, [INTERVAL_BETWEEN, START_ROTATIONY, colorAry, containerRef]);
 
   //컴퓨터 화면에서 마우스 이동으로 막대 를 볼 수 있음
   const handleMouseMoveWrapper = (e: React.MouseEvent) => {
