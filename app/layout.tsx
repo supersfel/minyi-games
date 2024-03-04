@@ -20,7 +20,7 @@ export default function RootLayout({
     <html>
       <body>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        {/* <ToastContainer position="top-center" autoClose={3000} /> */}
+        <ToastContainer position="top-center" autoClose={3000} />
       </body>
     </html>
   );
