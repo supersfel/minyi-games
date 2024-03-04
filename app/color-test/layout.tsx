@@ -1,3 +1,5 @@
+import { ToastContainer } from "react-toastify";
+
 export default function layout({ children }: { children: React.ReactNode }) {
   return (
     <html>
@@ -12,6 +14,8 @@ export default function layout({ children }: { children: React.ReactNode }) {
             색감 테스트
           </p>
           {children}
+
+          <ToastContainer position="top-center" autoClose={3000} />
         </div>
       </body>
     </html>
