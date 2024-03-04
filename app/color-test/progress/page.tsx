@@ -75,7 +75,7 @@ const Page = () => {
 
 /* STYLE */
 
-const Wrapper = styled.p<{ isMobile: boolean }>`
+const Wrapper = styled.div<{ isMobile: boolean }>`
   width: ${({ isMobile }) => (isMobile ? "90%" : "60%")};
   margin: 0 auto;
   display: flex;
@@ -84,10 +84,10 @@ const Wrapper = styled.p<{ isMobile: boolean }>`
   justify-content: center;
 `;
 
-const Level = styled.p`
+const Level = styled.div`
   font-size: 4rem;
   margin-top: 1rem;
-  magrin-bottom: -1rem;
+  margin-bottom: -1rem;
 `;
 
 const BrushArea = styled.div`

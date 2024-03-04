@@ -73,7 +73,7 @@ const Page = () => {
 };
 
 /* STYLE */
-const Wrapper = styled.p<{ isMobile: boolean }>`
+const Wrapper = styled.div<{ isMobile: boolean }>`
   width: ${({ isMobile }) => (isMobile ? "90%" : "60%")};
   margin: 0 auto;
   display: flex;
