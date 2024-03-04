@@ -8,11 +8,6 @@ import styled from "styled-components";
 import { useRouter } from "next/navigation";
 
 const Page = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(/Mobi/i.test(window.navigator.userAgent));
-  }, []);
   const startAry = [
     "#800080",
     "#4b0082",
@@ -43,7 +38,7 @@ const Page = () => {
   };
 
   return (
-    <Wrapper isMobile={isMobile}>
+    <Wrapper>
       <Description>
         <p>당신의 시각적 차별력은 얼마나 뛰어나신가요?</p>
         <p>레벨을 측정하고 공유해 보세요!</p>
@@ -73,13 +68,16 @@ const Page = () => {
 };
 
 /* STYLE */
-const Wrapper = styled.p<{ isMobile: boolean }>`
-  width: ${({ isMobile }) => (isMobile ? "90%" : "60%")};
+const Wrapper = styled.div`
+  width: 60%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 const Description = styled(BlackBox)`

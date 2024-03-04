@@ -10,12 +10,6 @@ import { useRouter } from "next/navigation";
 import useJsConfetti from "color-test/hooks/useJsConfetti";
 
 const Page = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(/Mobi/i.test(window.navigator.userAgent));
-  }, []);
-
   const [makeCorrectBoom, makeWrongBoom] = useJsConfetti();
 
   const [colors, setColors] = useState<string[]>([]);
@@ -53,7 +47,7 @@ const Page = () => {
   };
 
   return (
-    <Wrapper isMobile={isMobile}>
+    <Wrapper>
       <Level>Lv{level}</Level>
       <BrushArea>
         <Brush color={answer} size="200px"></Brush>
@@ -75,19 +69,22 @@ const Page = () => {
 
 /* STYLE */
 
-const Wrapper = styled.p<{ isMobile: boolean }>`
-  width: ${({ isMobile }) => (isMobile ? "90%" : "60%")};
+const Wrapper = styled.div`
+  width: 60%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 const Level = styled.p`
   font-size: 4rem;
   margin-top: 1rem;
-  magrin-bottom: -1rem;
+  margin-bottom: -1rem;
 `;
 
 const BrushArea = styled.div`

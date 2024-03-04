@@ -8,11 +8,6 @@ import styled from "styled-components";
 import { useParams, useRouter } from "next/navigation";
 
 const Page = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(/Mobi/i.test(window.navigator.userAgent));
-  }, []);
   const param = useParams();
   const level = +param.level;
   const mentAry = [
@@ -47,7 +42,7 @@ const Page = () => {
   };
 
   return (
-    <Wrapper isMobile={isMobile}>
+    <Wrapper>
       <Result>
         <p>결과..</p>
         LV {level}
@@ -68,13 +63,16 @@ const Page = () => {
 };
 
 /* STYLE */
-const Wrapper = styled.p<{ isMobile: boolean }>`
-  width: ${({ isMobile }) => (isMobile ? "90%" : "60%")};
+const Wrapper = styled.div`
+  width: 60%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 const Result = styled.div`
