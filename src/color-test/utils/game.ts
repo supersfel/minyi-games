@@ -1,3 +1,22 @@
+import JSConfetti from "js-confetti";
+
+const jsConfetti = new JSConfetti();
+export const makeCorrectBoom = () => {
+  jsConfetti.addConfetti({
+    emojis: ["🏆", "🎨", "🌈", "👨‍🎨"],
+    emojiSize: 100,
+    confettiNumber: 40,
+  });
+};
+
+export const makeWrongBoom = () => {
+  jsConfetti.addConfetti({
+    emojis: ["💩", "😭", "🤷", "💩"],
+    emojiSize: 100,
+    confettiNumber: 25,
+  });
+};
+
 function ColorToHex(color: number) {
   var hexadecimal = Number(color).toString(16).toUpperCase();
   return hexadecimal.length === 1 ? "0" + hexadecimal : hexadecimal;
