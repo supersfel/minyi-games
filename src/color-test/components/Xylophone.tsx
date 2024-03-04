@@ -257,6 +257,7 @@ const Wrapper = styled.div`
   margin-top: 10rem;
   overflow: hidden;
   cursor: pointer;
+  z-index: 100;
 `;
 
 const Animations = styled.div`
