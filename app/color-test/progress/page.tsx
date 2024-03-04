@@ -5,9 +5,12 @@ import Xylophone from "color-test/components/Xylophone";
 import { useEffect, useState } from "react";
 import { BlackBox } from "color-test/styles/box";
 import styled from "styled-components";
-import { makeRandomColors } from "color-test/utils/game";
+import {
+  makeCorrectBoom,
+  makeRandomColors,
+  makeWrongBoom,
+} from "color-test/utils/game";
 import { useRouter } from "next/navigation";
-import useJsConfetti from "color-test/hooks/useJsConfetti";
 
 const Page = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -16,8 +19,7 @@ const Page = () => {
     setIsMobile(/Mobi/i.test(window.navigator.userAgent));
   }, []);
 
-  const [makeCorrectBoom, makeWrongBoom] = useJsConfetti();
-
+  //   const isMobile = true;
   const [colors, setColors] = useState<string[]>([]);
 
   const [doCheckAnswer, setDoCheckAnswer] = useState(false);
