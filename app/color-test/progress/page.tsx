@@ -5,15 +5,19 @@ import Xylophone from "color-test/components/Xylophone";
 import { useEffect, useState } from "react";
 import { BlackBox } from "color-test/styles/box";
 import styled from "styled-components";
-import {
-  makeCorrectBoom,
-  makeRandomColors,
-  makeWrongBoom,
-} from "color-test/utils/game";
+import { makeRandomColors } from "color-test/utils/game";
 import { useRouter } from "next/navigation";
+import useJsConfetti from "color-test/hooks/useJsConfetti";
 
-const Progress = () => {
-  const isMobile = /Mobi/i.test(window.navigator.userAgent);
+const Page = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(/Mobi/i.test(window.navigator.userAgent));
+  }, []);
+
+  const [makeCorrectBoom, makeWrongBoom] = useJsConfetti();
+
   const [colors, setColors] = useState<string[]>([]);
 
   const [doCheckAnswer, setDoCheckAnswer] = useState(false);
@@ -108,4 +112,4 @@ const CheckBtn = styled(BlackBox)`
   cursor: pointer;
 `;
 
-export default Progress;
+export default Page;
