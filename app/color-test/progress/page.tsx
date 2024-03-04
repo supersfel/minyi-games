@@ -5,11 +5,7 @@ import Xylophone from "color-test/components/Xylophone";
 import { useEffect, useState } from "react";
 import { BlackBox } from "color-test/styles/box";
 import styled from "styled-components";
-import {
-  makeCorrectBoom,
-  makeRandomColors,
-  makeWrongBoom,
-} from "color-test/utils/game";
+import { makeRandomColors } from "color-test/utils/game";
 import { useRouter } from "next/navigation";
 
 const Progress = () => {
@@ -22,7 +18,6 @@ const Progress = () => {
   const [level, setLevel] = useState(1);
   const levelUp = () => {
     setLevel((prev) => prev + 1);
-    makeCorrectBoom();
   };
 
   const router = useRouter();
@@ -44,7 +39,6 @@ const Progress = () => {
   };
 
   const gameEnd = () => {
-    makeWrongBoom();
     router.push(`/color-test/end/${level}`);
   };
 

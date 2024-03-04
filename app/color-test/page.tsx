@@ -6,7 +6,6 @@ import { BlackBox } from "color-test/styles/box";
 import { uiColor } from "color-test/styles/color";
 import styled from "styled-components";
 import { useRouter } from "next/navigation";
-import { makeCorrectBoom } from "color-test/utils/game";
 
 const Start = () => {
   const isMobile = /Mobi/i.test(window.navigator.userAgent); // "Mobi" 가 User agent에 포함되어 있으면 모바일
