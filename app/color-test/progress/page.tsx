@@ -46,18 +46,41 @@ const Page = () => {
     router.push(`/color-test/end/${level}`);
   };
 
+  const startAry = [
+    "#800080",
+    "#4b0082",
+    "#0000ff",
+    "#464BD8",
+    "#104331",
+    "#008000",
+    "#ffff00",
+    "#ff8c00",
+    "#f135bc",
+    "#ff0000",
+  ];
+
   return (
     <Wrapper>
       <Level>Lv{level}</Level>
       <BrushArea>
         <Brush color={answer} size="200px"></Brush>
       </BrushArea>
-      <XylophoneWrapper>
+      {/* <XylophoneWrapper>
         <Xylophone
           colorAry={colors}
           doChekcAnswer={doCheckAnswer}
           answer={answer}
           level={level}
+          goNextLevel={levelUp}
+          gameEnd={gameEnd}
+        />
+      </XylophoneWrapper> */}
+      <XylophoneWrapper>
+        <Xylophone
+          colorAry={startAry}
+          doChekcAnswer={doCheckAnswer}
+          answer="#464BD8"
+          level={0}
           goNextLevel={levelUp}
         />
       </XylophoneWrapper>
