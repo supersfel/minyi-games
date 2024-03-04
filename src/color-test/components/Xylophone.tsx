@@ -257,17 +257,23 @@ const Wrapper = styled.div`
   margin-top: 10rem;
   overflow: hidden;
   cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
 `;
 
 const Animations = styled.div`
   position: absolute;
   cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
 `;
 
 const Box = styled.div`
   position: absolute;
   overflow: hidden;
   cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
 `;
 
 Xylophone.displayName = "Xylophone";
