@@ -6,13 +6,10 @@ import { BlackBox } from "color-test/styles/box";
 import { uiColor } from "color-test/styles/color";
 import styled from "styled-components";
 import { useRouter } from "next/navigation";
+import { makeCorrectBoom } from "color-test/utils/game";
 
-const Page = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(/Mobi/i.test(window.navigator.userAgent));
-  }, []);
+const Start = () => {
+  const isMobile = /Mobi/i.test(window.navigator.userAgent); // "Mobi" 가 User agent에 포함되어 있으면 모바일
   const startAry = [
     "#800080",
     "#4b0082",
@@ -117,4 +114,4 @@ const StartBtn = styled(BlackBox)`
   font-size: 2rem;
   cursor: pointer;
 `;
-export default Page;
+export default Start;

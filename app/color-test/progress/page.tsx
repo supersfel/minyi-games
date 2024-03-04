@@ -12,14 +12,8 @@ import {
 } from "color-test/utils/game";
 import { useRouter } from "next/navigation";
 
-const Page = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(/Mobi/i.test(window.navigator.userAgent));
-  }, []);
-
-  //   const isMobile = true;
+const Progress = () => {
+  const isMobile = /Mobi/i.test(window.navigator.userAgent);
   const [colors, setColors] = useState<string[]>([]);
 
   const [doCheckAnswer, setDoCheckAnswer] = useState(false);
@@ -114,4 +108,4 @@ const CheckBtn = styled(BlackBox)`
   cursor: pointer;
 `;
 
-export default Page;
+export default Progress;

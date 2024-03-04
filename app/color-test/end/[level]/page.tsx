@@ -7,12 +7,7 @@ import { uiColor } from "color-test/styles/color";
 import styled from "styled-components";
 import { useParams, useRouter } from "next/navigation";
 
-const Page = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(/Mobi/i.test(window.navigator.userAgent));
-  }, []);
+const GameOver = () => {
   const param = useParams();
   const level = +param.level;
   const mentAry = [
@@ -37,6 +32,8 @@ const Page = () => {
     const nxIdx = level > 19 ? 0 : level > 12 ? 1 : level > 8 ? 2 : 3;
     setMentIdx(nxIdx);
   }, [level]);
+
+  const isMobile = /Mobi/i.test(window.navigator.userAgent);
 
   const handleShareBtn = () => {
     toast.warning("아직 공유중은 개발중이에요 ㅠ");
@@ -118,4 +115,4 @@ const ShareBtn = styled(BlackBox)`
   cursor: pointer;
 `;
 
-export default Page;
+export default GameOver;
