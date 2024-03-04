@@ -59,7 +59,6 @@ const Page = () => {
           answer={answer}
           level={level}
           goNextLevel={levelUp}
-          gameEnd={gameEnd}
         />
       </XylophoneWrapper>
       <CheckBtn onClick={hadleCheckBtn}>선택하기</CheckBtn>
