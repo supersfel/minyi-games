@@ -17,6 +17,7 @@ const Page = () => {
   const [doCheckAnswer, setDoCheckAnswer] = useState(false);
   const [answer, setAnswer] = useState<string>("");
 
+  //IOS 에러해결을 위한 강제 최초 렌더링 수행
   useEffect(() => {
     setDoCheckAnswer(false);
   }, []);
