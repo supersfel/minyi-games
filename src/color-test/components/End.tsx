@@ -12,6 +12,7 @@ interface Props {
 }
 
 const End = ({ percent }: Props) => {
+  //해당쪽은 서버사이드로 빼야한다.
   const param = useParams();
   const level = +param.level;
   const mentAry = [
