@@ -53,7 +53,7 @@ const End = ({ percent }: Props) => {
       </Result>
       <Ment>
         <p>{mentAry[mentIdx]}</p>
-        <p>상위 {percent}%입니다!!</p>
+        <p>상위 {percent.toFixed(2)}%입니다!!</p>
       </Ment>
       <BrushArea>
         <Brush color={medalColor[mentIdx]} size="200px"></Brush>
