@@ -13,7 +13,7 @@ export default function Page() {
       }}
       href="/color-test/progress"
     >
-      색인지게임!
+      게임하러 가기
     </Link>
   );
 }
