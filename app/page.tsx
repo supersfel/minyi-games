@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+//추후 게임들 추가
 export default function Page() {
   return (
     <Link
